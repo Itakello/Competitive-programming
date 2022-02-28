@@ -1,5 +1,6 @@
 // https://open.kattis.com/contests/pp9wfr/problems/cold
 #include <iostream>
+
 using namespace std;
 
 int main() {
