@@ -1,2 +1,0 @@
-* `countingstars` -> conta delle stelle
-* 
