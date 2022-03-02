@@ -1,5 +1,6 @@
 // https://open.kattis.com/contests/pp9wfr/problems/dicecup
 #include <iostream>
+
 using namespace std;
 
 int main(int argc, char const* argv[]) {

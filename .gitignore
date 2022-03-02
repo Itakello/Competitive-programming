@@ -1,3 +1,4 @@
 Books/
-*/a.exe
-*/input.txt
+*.exe
+*.txt
+*.out
