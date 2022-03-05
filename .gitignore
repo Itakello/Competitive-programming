@@ -3,3 +3,4 @@ Books/
 *.txt
 *.out
 .vscode
+*.json
