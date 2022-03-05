@@ -80,7 +80,6 @@ int main(int argc, char** argv) {
 		dates.clear();
 		for (int i = 0; i < b; i++) {
 			getline(cin, line);
-			// cout << line << endl;
 			string tmp[5];
 			split(line, tmp);
 			dateConv(tmp);
