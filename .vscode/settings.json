@@ -3,6 +3,7 @@
 		"*.html": "html",
 		"*.h": "cpp",
 		"valarray": "cpp",
-		"ostream": "cpp"
+		"ostream": "cpp",
+		"unordered_set": "cpp"
 	}
 }
