@@ -19,19 +19,17 @@ int main(int argc, char** argv) {
 	cin >> n;
 	while (n--) {
 		cin >> m >> r;
-		unordered_set<int> s;
-		for (int i = m; i > 0; i--) {
-			s.insert(i);
+		unordered_map<int, int> mp;
+		stack<int> st;
+		for (int i = 0; i < m; i++) {
+			mp[i] = st.size();
+			st.push(i);
 			}
 		int tmp;
 		for (int i = 0; i < r; i++) {
-			/* for (auto x : s) {
-				cout << x << " ";
-				}
-			cout << endl; */
 			cin >> tmp;
-			auto it = s.find(tmp);
-			cout << distance(s.begin(), it) << " ";
+			auto it = mp.find(tmp);
+			cout << it->second << " ";
 			int val = *it;
 			s.erase(it);
 			// cout << val << endl;
