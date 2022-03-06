@@ -1,7 +1,17 @@
-// https://open.kattis.com/contests/mv3zwo/problems/deduplicatingfiles
+//https://open.kattis.com/contests/mv3zwo/problems/deduplicatingfiles
+#pragma GCC optimize ("Ofast") 
+#pragma GCC optimization ("unroll-loops")
 #include <bits/stdc++.h>
+#define MAXN 10005
 #define l 50
+
 using namespace std;
+
+typedef long long ll;
+typedef pair<int, int> ii;
+typedef vector<ii> vii;
+typedef vector<bool> vb;
+typedef vector<int> vi;
 
 int XorAscii(string str, int len) {
 	int ans = int(str[0]);
@@ -11,7 +21,8 @@ int XorAscii(string str, int len) {
 	return ans;
 	}
 
-int main(int argc, char const* argv[]) {
+int main(int argc, char** argv) {
+	if (argc > 1) (void)!freopen(argv[1], "r", stdin); ios::sync_with_stdio(false); cin.tie(0);
 	int n;
 	cin >> n;
 	do {
@@ -31,27 +42,22 @@ int main(int argc, char const* argv[]) {
 				diff_f++;
 				vector<string> tmp;
 				tmp.push_back(str);
-				hashes.insert(make_pair(h, tmp)); // hash -> [elems, collis]
+				hashes[h] = tmp; // hash -> [elems, collis]
 				}
 			else { // Already seen hash
-				//cerr << "Old hash" << endl;
 				it->second.push_back(str);
 				bool newEl = true;
 				int curr = it->second.size() - 1;
-				//cout << str << " -> ";
 				for (int i = 0; i < curr; i++)
-					if (it->second[i].compare(str) == 0)
+					if (it->second[i] == str) {
 						newEl = false;
+						break;
+						}
 				if (newEl)
 					diff_f++;
 				}
 			}
 		for (auto it = hashes.begin(); it != hashes.end(); it++) {
-			/* cout << it->first << "->" << "[";
-			for (string s : it->second) {
-				cout << s.substr(0, 4) << " ";
-				}
-			cout << "]" << "\t"; */
 			for (int i = 0; i < it->second.size(); i++) {
 				for (int j = 0; j < it->second.size() && j != i; j++) {
 					if (it->second[i].compare(it->second[j]))
@@ -59,10 +65,8 @@ int main(int argc, char const* argv[]) {
 					}
 				}
 			}
-		//cout << endl;
 		cout << diff_f << " " << diff_h << endl;
 		cin >> n;
 		} while (n > 0);
-
 		return 0;
 	}

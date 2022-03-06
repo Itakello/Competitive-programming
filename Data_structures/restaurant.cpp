@@ -1,20 +1,19 @@
-// https://open.kattis.com/contests/mv3zwo/problems/restaurant
+//https://open.kattis.com/contests/mv3zwo/problems/restaurant
+#pragma GCC optimize ("Ofast") 
+#pragma GCC optimization ("unroll-loops")
 #include <bits/stdc++.h>
+#define MAXN 10005
+
 using namespace std;
 
-// Greedy NON funziona, cioè metterli subito in quello ordinato, se ci stanno
-// 
-// Take plates from the waiter and pass to the dishwasher when he requests them
-// Wash in the same order of arrival
-// TODO : taken m => move x + move y + taken m
-// TODO : drop m => move x + move y + drop m
-// x+y <= 5m
+typedef long long ll;
+typedef pair<int, int> ii;
+typedef vector<ii> vii;
+typedef vector<bool> vb;
+typedef vector<int> vi;
 
 int pile1, pile2;
 
-// Ex : DROP 2 100   : 1 2 100
-// Ex : MOVE 1->2 10 : 2 1 10
-// Ex : TAKE 2 100   : 3 2 100
 void print(int action, int curr, int num) {
 	int from = curr - 1, to = 2 - curr;
 	if (action == 1) {
@@ -33,9 +32,8 @@ void print(int action, int curr, int num) {
 	cout << " " << num << endl;
 	}
 
-int main(int argc, char const* argv[]) {
-	//ifstream cin("sample.in");
-	//ofstream cout("output.txt");
+int main(int argc, char** argv) {
+	if (argc > 1) (void)!freopen(argv[1], "r", stdin); ios::sync_with_stdio(false); cin.tie(0);
 	int n, m;
 	string action;
 	cin >> n;
@@ -61,6 +59,5 @@ int main(int argc, char const* argv[]) {
 		cin >> n;
 		cout << endl;
 		} while (n > 0);
-
 		return 0;
 	}
