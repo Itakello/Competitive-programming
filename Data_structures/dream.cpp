@@ -66,7 +66,7 @@ int main(int argc, char** argv) {
 								ok = false;
 							}
 						}
-
+					getline(cin, event);
 					if (!ok)
 						cout << "Plot Error" << endl;
 					else if (mustnt == st.size())
