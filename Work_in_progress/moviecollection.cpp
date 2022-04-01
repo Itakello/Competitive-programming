@@ -19,23 +19,7 @@ int main(int argc, char** argv) {
 	cin >> n;
 	while (n--) {
 		cin >> m >> r;
-		unordered_map<int, int> mp;
-		stack<int> st;
-		for (int i = 0; i < m; i++) {
-			mp[i] = st.size();
-			st.push(i);
-			}
-		int tmp;
-		for (int i = 0; i < r; i++) {
-			cin >> tmp;
-			auto it = mp.find(tmp);
-			cout << it->second << " ";
-			int val = *it;
-			s.erase(it);
-			// cout << val << endl;
-			s.insert(val);
-			}
-		cout << endl;
+		
 		}
 	return 0;
 	}
