@@ -1,9 +1,9 @@
 Books/
 Certificates/
 Reply/
-Work_in_progress/
 *.exe
 *.txt
 *.out
-.vscode
+.vscode/
 *.json
+*.pdf
